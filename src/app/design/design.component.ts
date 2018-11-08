@@ -14,7 +14,7 @@ export class DesignComponent implements OnInit {
 
 
   ngOnInit() {
-
+    
   }
 
   rows = [];
