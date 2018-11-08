@@ -1,0 +1,21 @@
+<div class="container">
+  <h3>Design:</h3>
+  <div cdkDropList class="widget" [cdkDropListData]="rows" cdkDropListOrientation="vertical" (cdkDropListDropped)="drop($event)">
+    <div cdkDrag cdkDropList #row1="cdkDropList" [cdkDropListData]="firstSlots" [cdkDropListConnectedTo]="[row2, row3, row4]" class="designSlots" (cdkDropListDropped)="drop($event)" cdkDropListOrientation="horizontal">
+      <div class="handle" cdkDragHandle></div>
+      <div class="slotBox" *ngFor='let slot of firstSlots' cdkDrag>{{slot}}</div>
+    </div>
+    <div cdkDrag cdkDropList #row2="cdkDropList" [cdkDropListData]="secondSlots" [cdkDropListConnectedTo]="[row1, row3, row4]" class="designSlots" (cdkDropListDropped)="drop($event)" cdkDropListOrientation="horizontal">
+      <div class="handle" cdkDragHandle></div>
+      <div class="slotBox" *ngFor='let slot of secondSlots' cdkDrag>{{slot}}</div>
+    </div>
+    <div cdkDrag cdkDropList #row3="cdkDropList" [cdkDropListData]="thirdSlots" [cdkDropListConnectedTo]="[row1, row2, row4]" class="designSlots" (cdkDropListDropped)="drop($event)" cdkDropListOrientation="horizontal">
+      <div class="handle" cdkDragHandle></div>
+      <div class="slotBox" *ngFor='let slot of thirdSlots' cdkDrag>{{slot}}</div>
+    </div>
+    <div cdkDrag cdkDropList #row4="cdkDropList" [cdkDropListData]="fourthSlots" [cdkDropListConnectedTo]="[row1, row2, row3]" class="designSlots" (cdkDropListDropped)="drop($event)" cdkDropListOrientation="horizontal">
+      <div class="handle" cdkDragHandle></div>
+      <div class="slotBox" *ngFor='let slot of fourthSlots' cdkDrag>{{slot}}</div>
+    </div>
+  </div>
+</div>

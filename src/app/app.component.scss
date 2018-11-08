@@ -1,0 +1,17 @@
+.navpane {
+    list-style: none;
+    width: 80%;
+    padding: 0;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    position: relative;
+}
+
+.navlink {
+    margin: 0;
+    padding: 10px;
+    color: green;
+    cursor: pointer;
+}

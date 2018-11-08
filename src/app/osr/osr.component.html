@@ -1,0 +1,6 @@
+<div class="container">
+  <h3>OSR:</h3>
+  <ul cdkDropList class="list" (cdkDropListDropped)="drop($event)">
+    <li class="item" *ngFor="let OSRpart of OSRparts" cdkDrag>{{OSRpart}}</li>
+  </ul>
+</div>

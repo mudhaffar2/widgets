@@ -1,0 +1,6 @@
+<div class="container">
+  <h3>AD:</h3>
+  <ul cdkDropList class="list" (cdkDropListDropped)="drop($event)">
+    <li class="item" *ngFor="let ADpart of ADparts" cdkDrag>{{ADpart}}</li>
+  </ul>
+</div>

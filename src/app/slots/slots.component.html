@@ -1,0 +1,6 @@
+<div class="container">
+  <h3>Slots:</h3>
+  <ul cdkDropList class="list" (cdkDropListDropped)="drop($event)">
+    <li class="item" *ngFor="let slot of slots" cdkDrag>{{slot}}</li>
+  </ul>
+</div>

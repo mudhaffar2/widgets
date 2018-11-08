@@ -1,0 +1,75 @@
+.container {
+  margin: 0 auto;
+  padding: 0;
+  width: 80%;
+}
+
+.widget {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  position: relative;
+  margin: 0 auto;
+  padding: 10px 0;
+  border: 1px solid #ddd;
+  width: 100%;
+}
+
+.designSlots {
+    position: relative;
+    width: 90%;
+    height: 150px;
+    margin: 1% auto;
+    background-color: #eee;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.slotBox {
+    position: relative;
+    flex-grow: 1;
+    height: 70%;
+    background-color: #fff;
+    font-size: 25px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 1%;
+}
+
+.cdk-drag-preview {
+  box-sizing: border-box;
+  border-radius: 4px;
+  box-shadow: 0 5px 5px -3px rgba(0, 0, 0, 0.2),
+              0 8px 10px 1px rgba(0, 0, 0, 0.14),
+              0 3px 14px 2px rgba(0, 0, 0, 0.12);
+}
+
+.cdk-drag-placeholder {
+  opacity: .5;
+}
+
+.cdk-drag-animating {
+  transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
+}
+
+.slotBox:last-child {
+  border: none;
+}
+
+.designSlots.cdk-drop-list-dragging .slotBox:not(.cdk-drag-placeholder) {
+  transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
+}
+
+.handle {
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 20px;
+  height: 10px;
+  background-color: aqua;
+}
