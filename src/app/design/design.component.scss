@@ -65,11 +65,13 @@
 }
 
 .handle {
-  display: block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   position: absolute;
   left: 0;
   top: 0;
   width: 20px;
-  height: 10px;
+  height: 20px;
   background-color: aqua;
 }
