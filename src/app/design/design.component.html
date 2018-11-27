@@ -2,9 +2,9 @@
   <h3>Design:</h3>
   <div cdkDropList class="widget" [cdkDropListData]="rows" cdkDropListOrientation="vertical" (cdkDropListDropped)="drop($event)">
     <ng-container *ngFor='let row of rows; index as idx'>
-      <div cdkDrag cdkDropList id='row{{idx}}' [cdkDropListData]="row" [cdkDropListConnectedTo]="[row0,row1,row2,row3]" class="designSlots" (cdkDropListDropped)="drop($event)" cdkDropListOrientation="horizontal">
-        <div class="handle" cdkDragHandle>{{idx}}</div>
-        <div class="slotBox" [cdkDragData]='slot' *ngFor='let slot of row' cdkDrag>{{slot}}</div>
+      <div cdkDrag [cdkDragData]='row' cdkDropList id='row{{idx}}' [cdkDropListData]="row" [cdkDropListConnectedTo]="['row0','row1','row2','row3']" class="designSlots" (cdkDropListDropped)="drop($event)" cdkDropListOrientation="horizontal">
+        <div class="handle" cdkDragHandle></div>
+        <div class="slotBox" [cdkDragData]='slot' *ngFor='let slot of row' cdkDrag (cdkDragMoved)='drag($event)'>{{slot}}</div>
       </div>
     </ng-container>
   </div>

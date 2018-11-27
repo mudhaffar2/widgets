@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { CdkDragDrop, moveItemInArray, transferArrayItem } from '@angular/cdk/drag-drop';
+import { CdkDragDrop, moveItemInArray, transferArrayItem, CdkDragMove } from '@angular/cdk/drag-drop';
+
 
 @Component({
   selector: 'app-design',
@@ -28,8 +29,19 @@ export class DesignComponent implements OnInit {
                         event.previousIndex,
                         event.currentIndex);
     }
-    
-    console.log(event.container.data);
+    // console.log(event.item.element.nativeElement.getBoundingClientRect(), event.previousContainer.data, event.container.data);
   }
+
+  drag(event: CdkDragMove<string[]>) {
+    let widget = document.querySelector('.widget');
+    let designSlots = document.querySelectorAll('.designSlots');
+    designSlots.forEach((designSlot)=>{
+      designSlot.setAttribute('style','');
+    });
+    widget.removeAttribute('cdkdroplist');
+    widget.classList.remove('cdk-drop-list');
+  }
+
+
 
 }
