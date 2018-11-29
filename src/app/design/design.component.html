@@ -1,10 +1,27 @@
 <div class="container">
   <h3>Design:</h3>
-  <div cdkDropList class="widget" [cdkDropListData]="rows" cdkDropListOrientation="vertical" (cdkDropListDropped)="drop($event)">
+  <div  class="widget" 
+        cdkDropList 
+        [cdkDropListData]="rows" 
+        (cdkDropListDropped)="drop($event)"
+        cdkDropListOrientation="vertical" >
     <ng-container *ngFor='let row of rows; index as idx'>
-      <div cdkDrag [cdkDragData]='row' cdkDropList id='row{{idx}}' [cdkDropListData]="row" [cdkDropListConnectedTo]="['row0','row1','row2','row3']" class="designSlots" (cdkDropListDropped)="drop($event)" cdkDropListOrientation="horizontal">
+      <div  class="designSlots" 
+            cdkDrag
+            [cdkDragData]='row' 
+            cdkDropList 
+            id='row{{idx}}' 
+            [cdkDropListData]="row" 
+            [cdkDropListConnectedTo]="['row0','row1','row2','row3']" 
+            (cdkDropListDropped)="drop($event)" 
+            cdkDropListOrientation="horizontal">
         <div class="handle" cdkDragHandle></div>
-        <div class="slotBox" [cdkDragData]='slot' *ngFor='let slot of row' cdkDrag (cdkDragMoved)='drag($event)'>{{slot}}</div>
+        <div  class="slotBox" 
+              cdkDrag 
+              [cdkDragData]='col' 
+              *ngFor='let col of row' >
+            <div class="adosr" (click)="adOsrToggle($event)">OSR</div>
+        </div>
       </div>
     </ng-container>
   </div>

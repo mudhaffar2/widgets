@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { CdkDragDrop, moveItemInArray, transferArrayItem, CdkDragMove } from '@angular/cdk/drag-drop';
+import { CdkDragDrop, moveItemInArray, transferArrayItem, CdkDragMove, CdkDrag } from '@angular/cdk/drag-drop';
 
 
 @Component({
@@ -20,6 +20,7 @@ export class DesignComponent implements OnInit {
 
   rows = [['1','2','3'],['4','5','6'],['7','8','9'],['10','11','12']];
 
+
   drop(event: CdkDragDrop<string[]>) {
     if (event.previousContainer === event.container) {
       moveItemInArray(event.container.data, event.previousIndex, event.currentIndex);
@@ -32,14 +33,8 @@ export class DesignComponent implements OnInit {
     // console.log(event.item.element.nativeElement.getBoundingClientRect(), event.previousContainer.data, event.container.data);
   }
 
-  drag(event: CdkDragMove<string[]>) {
-    let widget = document.querySelector('.widget');
-    let designSlots = document.querySelectorAll('.designSlots');
-    designSlots.forEach((designSlot)=>{
-      designSlot.setAttribute('style','');
-    });
-    widget.removeAttribute('cdkdroplist');
-    widget.classList.remove('cdk-drop-list');
+  adOsrToggle(event) {
+    event.target.textContent = (event.target.textContent === "OSR" ? "AD" : "OSR");
   }
 
 

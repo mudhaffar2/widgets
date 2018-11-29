@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
+import { CdkDragDrop, moveItemInArray, transferArrayItem } from '@angular/cdk/drag-drop';
 
 @Component({
   selector: 'app-ad',
@@ -18,8 +18,19 @@ export class ADComponent implements OnInit {
     'adhint'
   ];
 
+  ADslot = [];
+
   drop(event: CdkDragDrop<string[]>) {
-    moveItemInArray(this.ADparts, event.previousIndex, event.currentIndex);
+    if (event.container == event.previousContainer) {
+      moveItemInArray(  event.container.data, 
+                        event.previousIndex, 
+                        event.currentIndex);
+    } else {
+      transferArrayItem(  event.previousContainer.data,
+                          event.container.data,
+                          event.previousIndex,
+                          event.currentIndex)
+    }
   }
 
   ngOnInit() {

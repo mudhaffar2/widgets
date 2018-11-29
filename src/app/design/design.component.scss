@@ -38,6 +38,17 @@
     justify-content: center;
     align-items: center;
     margin: 0 1%;
+    cursor: move;
+}
+
+.adosr {
+  display: inline;
+  padding: 2px;
+  font-size: 16px;
+  line-height: 1;
+  background-color: aquamarine; 
+  color: #fff;
+  cursor: pointer;
 }
 
 .cdk-drag-preview {
@@ -74,4 +85,5 @@
   width: 20px;
   height: 20px;
   background-color: aqua;
+  cursor: move;
 }

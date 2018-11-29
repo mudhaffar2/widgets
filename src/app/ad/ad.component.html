@@ -1,6 +1,17 @@
 <div class="container">
   <h3>AD:</h3>
-  <ul cdkDropList class="list" (cdkDropListDropped)="drop($event)">
-    <li class="item" *ngFor="let ADpart of ADparts" cdkDrag>{{ADpart}}</li>
-  </ul>
+  <ng-container cdkDropListGroup>
+    <ul class="list slotList" 
+        cdkDropList 
+        [cdkDropListData]="ADslot"
+        (cdkDropListDropped)="drop($event)">
+      <li class="item" *ngFor="let part of ADslot" cdkDrag>{{part}}</li>
+    </ul>
+    <ul class="list partsList" 
+        cdkDropList 
+        [cdkDropListData]="ADparts"
+        (cdkDropListDropped)="drop($event)">
+      <li class="item" *ngFor="let ADpart of ADparts" cdkDrag>{{ADpart}}</li>
+    </ul>
+  </ng-container>
 </div>
