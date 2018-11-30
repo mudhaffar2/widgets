@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
+import { CdkDragDrop, moveItemInArray, transferArrayItem } from '@angular/cdk/drag-drop';
 
 @Component({
   selector: 'app-osr',
@@ -9,6 +9,9 @@ import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
 export class OSRComponent implements OnInit {
 
   constructor() { }
+
+  ngOnInit() {
+  }
 
   OSRparts = [
     'image',
@@ -21,10 +24,16 @@ export class OSRComponent implements OnInit {
   ];
 
   drop(event: CdkDragDrop<string[]>) {
-    moveItemInArray(this.OSRparts, event.previousIndex, event.currentIndex);
-  }
-
-  ngOnInit() {
+    if (event.container === event.previousContainer) {
+      moveItemInArray(  event.container.data, 
+                        event.previousIndex, 
+                        event.currentIndex);
+    } else {
+      transferArrayItem(  event.previousContainer.data, 
+                          event.container.data, 
+                          event.previousIndex, 
+                          event.currentIndex);
+    }
   }
 
 }

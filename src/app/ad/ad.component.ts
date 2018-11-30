@@ -10,6 +10,9 @@ export class ADComponent implements OnInit {
 
   constructor() { }
 
+  ngOnInit() {
+  }
+
   ADparts = [
     'image',
     'title',
@@ -31,9 +34,6 @@ export class ADComponent implements OnInit {
                           event.previousIndex,
                           event.currentIndex)
     }
-  }
-
-  ngOnInit() {
   }
 
 }

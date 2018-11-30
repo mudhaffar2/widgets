@@ -1,6 +1,17 @@
 <div class="container">
   <h3>OSR:</h3>
-  <ul cdkDropList class="list" (cdkDropListDropped)="drop($event)">
-    <li class="item" *ngFor="let OSRpart of OSRparts" cdkDrag>{{OSRpart}}</li>
-  </ul>
+  <ng-container cdkDropListGroup>
+    <ul class="list slotList" 
+        cdkDropList 
+        [cdkDropListData]="OSRslot"
+        (cdkDropListDropped)="drop($event)">
+      <li class="item" *ngFor="let part of OSRslot" cdkDrag>{{part}}</li>
+    </ul>
+    <ul class="list partsList" 
+        cdkDropList 
+        [cdkDropListData]="OSRparts"
+        (cdkDropListDropped)="drop($event)">
+      <li class="item" *ngFor="let OSRpart of OSRparts" cdkDrag>{{OSRpart}}</li>
+    </ul>
+  </ng-container>
 </div>
