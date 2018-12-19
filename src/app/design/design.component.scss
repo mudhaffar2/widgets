@@ -6,13 +6,33 @@
 
 .widget {
   display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  position: relative;
+  margin: 0 auto;
+  padding: 0;
+  width: 100%;
+}
+
+.widget-settings {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  margin: 0;
+  padding: 10px;
+  border: 1px solid #ddd;
+  width: 28%;
+}
+
+.widget-design {
+  display: flex;
   flex-direction: column;
   justify-content: space-around;
   position: relative;
-  margin: 0 auto;
+  margin: 0;
   padding: 10px 0;
   border: 1px solid #ddd;
-  width: 100%;
+  width: 68%;
 }
 
 .designSlots {
@@ -46,7 +66,7 @@
   padding: 2px;
   font-size: 16px;
   line-height: 1;
-  background-color: aquamarine; 
+  background-color: forestgreen; 
   color: #fff;
   cursor: pointer;
 }
@@ -73,17 +93,4 @@
 
 .designSlots.cdk-drop-list-dragging .slotBox:not(.cdk-drag-placeholder) {
   transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
-}
-
-.handle {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 20px;
-  height: 20px;
-  background-color: aqua;
-  cursor: move;
 }

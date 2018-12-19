@@ -30,7 +30,7 @@ export class DesignComponent implements OnInit {
                         event.previousIndex,
                         event.currentIndex);
     }
-    // console.log(event.item.element.nativeElement.getBoundingClientRect(), event.previousContainer.data, event.container.data);
+    
   }
 
   adOsrToggle(event) {
