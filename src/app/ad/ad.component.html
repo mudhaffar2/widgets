@@ -1,11 +1,11 @@
 <div class="container">
   <h3>AD:</h3>
-  <ng-container cdkDropListGroup>
+  <div class="block" cdkDropListGroup>
     <ul class="list slotList" 
         cdkDropList 
         [cdkDropListData]="ADslot"
         (cdkDropListDropped)="drop($event)">
-      <li class="item" *ngFor="let part of ADslot" cdkDrag>{{part}}</li>
+      <li class="item" *ngFor="let part of ADslot" cdkDrag (click)='slotPartClick(part)'>{{part}}</li>
     </ul>
     <ul class="list partsList" 
         cdkDropList 
@@ -13,5 +13,136 @@
         (cdkDropListDropped)="drop($event)">
       <li class="item" *ngFor="let ADpart of ADparts" cdkDrag>{{ADpart}}</li>
     </ul>
-  </ng-container>
+  </div>
+  <div class="block form">
+    <div *ngIf='ADimage'>
+      <label>Image Size:
+        <input type="text" name="image_width" placeholder="Width">x
+        <input type="text" name="image_height" placeholder="Height">
+      </label>
+      <label>Crop:
+        <input type="checkbox" name="image_crop">
+      </label>
+      <label>Parent:
+        <input type="text" name="image_parent">
+      </label>
+      <label>Rich Media Formats:
+        <input type="checkbox" name="image_action_ads"> ActionAds
+        <input type="checkbox" name="image_video_ads"> VideoAds
+      </label>
+      <label>Max. Video Width:
+        <input type="text" name="image_max_video_width">
+      </label>
+      <label>Video Mode:
+        <input type="text" name="image_video_mode">
+      </label>
+      <label>Alternative Button URL:
+        <input type="text" name="image_alternative_url">
+      </label>
+      <label>Auto Close:
+        <input type="checkbox" name="image_auto_close">
+      </label>
+      <label>Engage:
+        <input type="text" name="image_engage">
+      </label>
+    </div>
+    <div *ngIf='ADtitle'>
+      <label>Length:
+        <input type="text" name="title_length">
+      </label>
+      <label>Ellipsis:
+        <input type="checkbox" name="title_ellipsis">
+      </label>
+      <label>Prefix:
+        <input type="text" name="title_prefix">
+      </label>
+      <label>Suffix:
+        <input type="text" name="title_suffix">
+      </label>
+      <label>Hyphenation:
+        <input type="checkbox" name="title_hyphenation">
+      </label>
+      <label>Default Text:
+        <input type="text" name="title_default">
+      </label>
+      <label>Max. No. of Lines:
+        <input type="text" name="title_max_no_lines">
+      </label>
+      <label>Parent:
+        <input type="text" name="title_parent">
+      </label>
+    </div>
+    <div *ngIf='ADtext'>
+      <label>Length:
+        <input type="text" name="text_length">
+      </label>
+      <label>Ellipsis:
+        <input type="checkbox" name="text_ellipsis">
+      </label>
+      <label>Prefix:
+        <input type="text" name="text_prefix">
+      </label>
+      <label>Suffix:
+        <input type="text" name="text_suffix">
+      </label>
+      <label>Hyphenation:
+        <input type="checkbox" name="text_hyphenation">
+      </label>
+      <label>Default Text:
+        <input type="text" name="text_default">
+      </label>
+      <label>Max. No. of Lines:
+        <input type="text" name="text_max_no_lines">
+      </label>
+      <label>Parent:
+        <input type="text" name="text_parent">
+      </label>
+      <label>More Hint:
+        <input type="checkbox" name="text_more">
+      </label>
+    </div>
+    <div *ngIf='ADbrand'>
+      <label>Length:
+        <input type="text" name="brand_length">
+      </label>
+      <label>Ellipsis:
+        <input type="checkbox" name="brand_ellipsis">
+      </label>
+      <label>Prefix:
+        <input type="text" name="brand_prefix">
+      </label>
+      <label>Suffix:
+        <input type="text" name="brand_suffix">
+      </label>
+      <label>Hyphenation:
+        <input type="checkbox" name="brand_hyphenation">
+      </label>
+      <label>Default Text:
+        <input type="text" name="brand_default">
+      </label>
+      <label>Parent:
+        <input type="text" name="brand_parent">
+      </label>
+    </div>
+    <div *ngIf='ADadhint'>
+      <label>Color:
+        <input type="text" name="adhint_color">
+      </label>
+      <label>Plural Form:
+        <input type="checkbox" name="adhint_plural">
+      </label>
+      <label>Shows as Text:
+        <input type="checkbox" name="adhint_as_text">
+      </label>
+      <label>AD Text:
+        <input type="text" name="adhint_ad_text">
+      </label>
+      <label>PCD Text:
+        <input type="text" name="adhint_pcd_text">
+      </label>
+      <label>Parent:
+        <input type="text" name="adhint_parent">
+      </label>
+    </div>
+  </div>
 </div>

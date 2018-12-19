@@ -62,3 +62,24 @@
 .list.cdk-drop-list-dragging .item:not(.cdk-drag-placeholder) {
   transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
 }
+
+.block {
+  display: block;
+  position: relative;
+  width: 100%;
+  float: left;
+  margin: 0 0 20px;
+}
+
+.form {
+  > div {
+    display: block;
+    position: relative;
+    margin: 0 0 10px;
+
+    > label {
+      float: left;
+      clear: both;
+    }
+  }
+}

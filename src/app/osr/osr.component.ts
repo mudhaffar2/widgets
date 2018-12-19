@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CdkDragDrop, moveItemInArray, transferArrayItem } from '@angular/cdk/drag-drop';
+import * as Variables from '../../assets/allVariables';
 
 @Component({
   selector: 'app-osr',
@@ -23,8 +24,10 @@ export class OSRComponent implements OnInit {
     'date'
   ];
 
+  OSRslot = [];
+
   drop(event: CdkDragDrop<string[]>) {
-    if (event.container === event.previousContainer) {
+    if (event.container == event.previousContainer) {
       moveItemInArray(  event.container.data, 
                         event.previousIndex, 
                         event.currentIndex);
@@ -34,6 +37,13 @@ export class OSRComponent implements OnInit {
                           event.previousIndex, 
                           event.currentIndex);
     }
+  }
+
+  slotPartClick (part) {
+    Variables.AllParts.forEach(item => {
+      this['OSR'+item] = false;
+    });
+    this['OSR'+part] = true;
   }
 
 }

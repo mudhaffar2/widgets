@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CdkDragDrop, moveItemInArray, transferArrayItem } from '@angular/cdk/drag-drop';
+import * as Variables from '../../assets/allVariables';
 
 @Component({
   selector: 'app-ad',
@@ -34,6 +35,13 @@ export class ADComponent implements OnInit {
                           event.previousIndex,
                           event.currentIndex)
     }
+  }
+
+  slotPartClick (part) {
+    Variables.AllParts.forEach(item => {
+      this['AD'+item] = false;
+    });
+    this['AD'+part] = true;
   }
 
 }

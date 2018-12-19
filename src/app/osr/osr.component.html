@@ -1,11 +1,11 @@
 <div class="container">
   <h3>OSR:</h3>
-  <ng-container cdkDropListGroup>
+  <div class="block" cdkDropListGroup>
     <ul class="list slotList" 
         cdkDropList 
         [cdkDropListData]="OSRslot"
         (cdkDropListDropped)="drop($event)">
-      <li class="item" *ngFor="let part of OSRslot" cdkDrag>{{part}}</li>
+      <li class="item" *ngFor="let part of OSRslot" cdkDrag (click)='slotPartClick(part)'>{{part}}</li>
     </ul>
     <ul class="list partsList" 
         cdkDropList 
@@ -13,5 +13,160 @@
         (cdkDropListDropped)="drop($event)">
       <li class="item" *ngFor="let OSRpart of OSRparts" cdkDrag>{{OSRpart}}</li>
     </ul>
-  </ng-container>
+  </div>
+  <div class="block form">
+    <div *ngIf='OSRimage'>
+      <label>Image Size:
+        <input type="text" name="image_width" placeholder="Width">x
+        <input type="text" name="image_height" placeholder="Height">
+      </label>
+      <label>Crop:
+        <input type="checkbox" name="image_crop">
+      </label>
+      <label>Default Image URL:
+        <input type="text" name="image_default_url">
+      </label>
+      <label>Parent:
+        <input type="text" name="image_parent">
+      </label>
+    </div>
+    <div *ngIf='OSRtitle'>
+      <label>Length:
+        <input type="text" name="title_length">
+      </label>
+      <label>Ellipsis:
+        <input type="checkbox" name="title_ellipsis">
+      </label>
+      <label>Prefix:
+        <input type="text" name="title_prefix">
+      </label>
+      <label>Suffix:
+        <input type="text" name="title_suffix">
+      </label>
+      <label>Hyphenation:
+        <input type="checkbox" name="title_hyphenation">
+      </label>
+      <label>Default Text:
+        <input type="text" name="title_default">
+      </label>
+      <label>Max. No. of Lines:
+        <input type="text" name="title_max_no_lines">
+      </label>
+      <label>Parent:
+        <input type="text" name="title_parent">
+      </label>
+    </div>
+    <div *ngIf='OSRtext'>
+      <label>Length:
+        <input type="text" name="text_length">
+      </label>
+      <label>Ellipsis:
+        <input type="checkbox" name="text_ellipsis">
+      </label>
+      <label>Prefix:
+        <input type="text" name="text_prefix">
+      </label>
+      <label>Suffix:
+        <input type="text" name="text_suffix">
+      </label>
+      <label>Hyphenation:
+        <input type="checkbox" name="text_hyphenation">
+      </label>
+      <label>Default Text:
+        <input type="text" name="text_default">
+      </label>
+      <label>Max. No. of Lines:
+        <input type="text" name="text_max_no_lines">
+      </label>
+      <label>Parent:
+        <input type="text" name="text_parent">
+      </label>
+      <label>More Hint:
+        <input type="checkbox" name="text_more">
+      </label>
+    </div>
+    <div *ngIf='OSRkicker'>
+      <label>Length:
+        <input type="text" name="kicker_length">
+      </label>
+      <label>Ellipsis:
+        <input type="checkbox" name="kicker_ellipsis">
+      </label>
+      <label>Prefix:
+        <input type="text" name="kicker_prefix">
+      </label>
+      <label>Suffix:
+        <input type="text" name="kicker_suffix">
+      </label>
+      <label>Hyphenation:
+        <input type="checkbox" name="kicker_hyphenation">
+      </label>
+      <label>Default Text:
+        <input type="text" name="kicker_default">
+      </label>
+      <label>Parent:
+        <input type="text" name="kicker_parent">
+      </label>
+    </div>
+    <div *ngIf='OSRcategory'>
+      <label>Length:
+        <input type="text" name="category_length">
+      </label>
+      <label>Ellipsis:
+        <input type="checkbox" name="category_ellipsis">
+      </label>
+      <label>Prefix:
+        <input type="text" name="category_prefix">
+      </label>
+      <label>Suffix:
+        <input type="text" name="category_suffix">
+      </label>
+      <label>Hyphenation:
+        <input type="checkbox" name="category_hyphenation">
+      </label>
+      <label>Default Text:
+        <input type="text" name="category_default">
+      </label>
+      <label>Parent:
+        <input type="text" name="category_parent">
+      </label>
+    </div>
+    <div *ngIf='OSRbrand'>
+      <label>Length:
+        <input type="text" name="brand_length">
+      </label>
+      <label>Ellipsis:
+        <input type="checkbox" name="brand_ellipsis">
+      </label>
+      <label>Prefix:
+        <input type="text" name="brand_prefix">
+      </label>
+      <label>Suffix:
+        <input type="text" name="brand_suffix">
+      </label>
+      <label>Hyphenation:
+        <input type="checkbox" name="brand_hyphenation">
+      </label>
+      <label>Default Text:
+        <input type="text" name="brand_default">
+      </label>
+      <label>Parent:
+        <input type="text" name="brand_parent">
+      </label>
+    </div>
+    <div *ngIf='OSRdate'>
+      <label>Format:
+        <input type="text" name="date_format">
+      </label>
+      <label>Shows as Difference:
+        <input type="checkbox" name="date_as_difference">
+      </label>
+      <label>Parent:
+        <input type="text" name="date_parent">
+      </label>
+      <label>Interval:
+        <input type="text" name="date_interval">
+      </label>
+    </div>
+  </div>
 </div>
