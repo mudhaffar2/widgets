@@ -13,13 +13,13 @@ export class AppComponent {
   title = 'Widget Editor';
   
   navlinks = [
-    'Slots',
-    'Design',
-    'OSR',
-    'AD'
+    'Widget Design',
+    'Slots Settings',
+    'OSR Slot Design',
+    'AD Slot Design'
   ];
 
   navClicked (event) {
-    this.router.navigateByUrl('/'+event.target.innerText);
+    this.router.navigateByUrl('/'+event.target.innerText.toLowerCase().replace(/\s/g, '-'));
   } 
 }

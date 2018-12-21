@@ -6,11 +6,11 @@ import { ADComponent } from './ad/ad.component';
 import { DesignComponent } from './design/design.component';
 
 const routes: Routes = [
-  { path: 'Slots', component: SlotsComponent },
-  { path: 'Design', component: DesignComponent },
-  { path: 'OSR', component: OSRComponent },
-  { path: 'AD', component: ADComponent },
-  { path: '', redirectTo: '/Slots', pathMatch: 'full'}
+  { path: 'widget-design', component: DesignComponent },
+  { path: 'slots-settings', component: SlotsComponent },
+  { path: 'osr-slot-design', component: OSRComponent },
+  { path: 'ad-slot-design', component: ADComponent },
+  { path: '', redirectTo: '/widget-design', pathMatch: 'full'}
 ];
 
 @NgModule({

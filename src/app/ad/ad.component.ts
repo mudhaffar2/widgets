@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CdkDragDrop, moveItemInArray, transferArrayItem } from '@angular/cdk/drag-drop';
-import * as Variables from '../../assets/allVariables';
+import * as Variables from '../../assets/all-variables';
 
 @Component({
   selector: 'app-ad',
