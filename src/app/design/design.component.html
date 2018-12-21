@@ -3,8 +3,8 @@
   <div class="widget">
     <div class="widget-settings">
       <h4>Settings:</h4>
-      <label>No. of Rows: <input type="text" name="widget_no_of_rows"></label>
-      <label>No. of Slots: <input type="text" name="widget_no_of_slots"></label>
+      <label>No. of Rows: <input type="text" name="widget_no_of_rows" value="2" onchange="NoRowsSlots(event)"></label>
+      <label>No. of Slots: <input type="text" name="widget_no_of_slots" value="6" onchange="NoRowsSlots(event)"></label>
     </div>
     <div  class="widget-design">
       <div  *ngFor='let row of rows; index as idx'
