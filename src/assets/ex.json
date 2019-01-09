@@ -1,0 +1,241 @@
+{
+  "data": {
+    "design": {
+      "renderHTML": true,
+      "listStyle": "template0",
+      "render": {
+        "target": {
+          "headline": {
+            "label": "Headline",
+            "text": "Headline"
+          },
+          "list": {},
+          "powered": {
+            "label": "Powered",
+            "position": "footer",
+            "color": "AAAAAA",
+            "text": "powered_text",
+            "url": "powered_url"
+          },
+          "oba": {
+            "label": "OBA",
+            "color": "AAAAAA",
+            "position": "right"
+          },
+          "advertise": {
+            "label": "Advertise",
+            "parent": "footer",
+            "text": "advertise_text",
+            "url": "advertise_alt_url"
+          }
+        },
+        "default": {
+          "image": {
+            "label": "Image",
+            "width": 320,
+            "height": 240,
+            "crop": true,
+            "parent": "parent",
+            "default": "default_image_url"
+          },
+          "kicker": {
+            "label": "Kicker",
+            "length": 50,
+            "ellipsis": true,
+            "split": true,
+            "parent": "parent",
+            "default": "default_text",
+            "suffix": "suffix",
+            "prefix": "prefix",
+            "line": 1
+          },
+          "category": {
+            "label": "Category",
+            "length": 50,
+            "ellipsis": true,
+            "split": true,
+            "prefix": "prefix",
+            "suffix": "suffix",
+            "default": "default_text",
+            "line": 1,
+            "parent": "parent"
+          },
+          "title": {
+            "label": "Title",
+            "length": 70,
+            "ellipsis": true,
+            "split": true,
+            "prefix": "prefix",
+            "suffix": "suffix",
+            "default": "default_text",
+            "line": 1,
+            "parent": "parent"
+          },
+          "text": {
+            "label": "Text",
+            "length": 50,
+            "ellipsis": true,
+            "split": true,
+            "default": "default_text",
+            "line": 1,
+            "prefix": "prefix",
+            "suffix": "suffix",
+            "parent": "parent",
+            "more": "more_text"
+          },
+          "brand": {
+            "label": "Brand",
+            "length": 50,
+            "ellipsis": true,
+            "split": true,
+            "prefix": "prefix",
+            "suffix": "suffix",
+            "default": "default_text",
+            "parent": "parent"
+          },
+          "date": {
+            "label": "Date",
+            "format": "format",
+            "diff": true,
+            "parent": "parent",
+            "interval": {}
+          }
+        },
+        "pet": {
+          "image": {
+            "label": "Image/Video",
+            "width": 320,
+            "height": 240,
+            "crop": true,
+            "maxWidth": 580,
+            "autoClose": false,
+            "mode": "widget",
+            "engage": "auto",
+            "parent": "parent",
+            "playButton": "alt_button_url"
+          },
+          "brand": {
+            "label": "Brand",
+            "landingpage": false,
+            "length": 40,
+            "ellipsis": false,
+            "split": true,
+            "prefix": "prefix",
+            "suffix": "suffix",
+            "default": "default_text",
+            "parent": "parent"
+          },
+          "title": {
+            "label": "Title",
+            "length": 70,
+            "ellipsis": true,
+            "split": true,
+            "line": 1,
+            "prefix": "prefix",
+            "suffix": "suffix",
+            "default": "default_text",
+            "parent": "parent"
+          },
+          "text": {
+            "label": "Text",
+            "length": 50,
+            "ellipsis": true,
+            "split": true,
+            "line": 1,
+            "prefix": "prefix",
+            "suffix": "suffix",
+            "default": "default_text",
+            "parent": "parent",
+            "more": "more_text"
+          },
+          "adhint": {
+            "color": "AAAAAA",
+            "type": "text",
+            "multiple": false,
+            "ad": "ad_text",
+            "pcd": "pcd_text",
+            "parent": "parent"
+          }
+        }
+      },
+      "slots": [{
+          "preferences": [{
+              "type": "pet",
+              "condition": {
+                "adblocker": "none"
+              },
+              "transparency": 1
+            },
+            {
+              "type": "default",
+              "transparency": 1
+            }
+          ]
+        },
+        {
+          "preferences": [{
+            "type": "pet",
+            "condition": {},
+            "transparency": 1
+          }]
+        },
+        {
+          "preferences": [{
+            "type": "default",
+            "transparency": 1
+          }]
+        }
+      ]
+    },
+    "domainid": 1025779,
+    "files": {
+      "custom.css": "custom_css_script",
+      "layout.css": "layout_template_script",
+      "structure.css": "structure_template_script",
+      "widgetScript.js": "widget_script"
+    },
+    "formats": 1,
+    "hasVideo": true,
+    "height": 0,
+    "width": 0,
+    "id": 953136,
+    "kind": "list",
+    "lang": "de",
+    "options": {
+      "comment": "comment",
+      "hardFloor": 123,
+      "styleTemplates": {
+        "layout.css": "Layout - Block 2",
+        "structure.css": "Structure 3 - ( BLOCK - Adhint below Image )"
+      },
+      "layout": "Block2",
+      "elements": "Title Only",
+      "getitems": "Push",
+      "integration": "Full",
+      "alias": "alias",
+      "context_filter": "context",
+      "priority": "belowArticle_1,belowArticle_2",
+      "rewriteAMP": "url_rewrite",
+      "redirectParam": "redirect_param",
+      "hidden": null,
+      "baseTemplate": "list.css",
+      "createdByTool": "platform-api",
+      "toolVersion": 2,
+      "flagPermissions": {
+        "deny": [],
+        "allow": []
+      },
+      "isActive": 0,
+      "use_sid": 1
+    },
+    "permissions": [
+      "AD",
+      "VIDEO_AD",
+      "ACTION_AD",
+      "PCD"
+    ],
+    "status": 1,
+    "title": "belowArticle",
+    "type": "predefined"
+  }
+}

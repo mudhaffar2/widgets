@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { CdkDragDrop, moveItemInArray, transferArrayItem, CdkDragMove, CdkDrag } from '@angular/cdk/drag-drop';
+import { CdkDragDrop, moveItemInArray, transferArrayItem } from '@angular/cdk/drag-drop';
+import { Store } from '@ngrx/store';
+import { AppState } from '../app.state';
+import { WidgetSize } from '../models/widget-design-tab.models';
+import { Observable } from 'rxjs';
 
 
 @Component({
@@ -9,15 +13,25 @@ import { CdkDragDrop, moveItemInArray, transferArrayItem, CdkDragMove, CdkDrag }
 })
 export class DesignComponent implements OnInit {
 
-  constructor() { 
+  constructor(public store: Store<AppState>) { 
     
   }
 
-  rows = [['1','2','3'],['4','5','6'],['7','8','9'],['10','11','12']];
+  widgetSize: Observable<WidgetSize>;
+  rows: any;
+  slots: any;
+  cols: any;
 
   ngOnInit() {
-    
+    this.widgetSize = this.store.select(state => state.widgetSize);
+    this.rows = this.widgetSize.rows;
+    this.slots = this.widgetSize.slots;
+    // this.rows = 4;
+    // this.cols = 3;
+    console.log(this.widgetSize, this.rows);
   }
+
+  matrix = [[1,2,3],[4,5,6],[7,8,9],[10,11,12]]
 
 
 

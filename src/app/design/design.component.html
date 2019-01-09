@@ -6,13 +6,11 @@
       <label>No. of Rows: <input type="text" name="widget_no_of_rows" value="2" onchange="NoRowsSlots(event)"></label>
       <label>No. of Slots: <input type="text" name="widget_no_of_slots" value="6" onchange="NoRowsSlots(event)"></label>
     </div>
-    <div  class="widget-design">
-      <div  *ngFor='let row of rows; index as idx'
+    <div  class="widget-design" cdkDropListGroup>
+      <div  *ngFor='let row of matrix'
             class="designSlots" 
             cdkDropList 
-            id='row{{idx}}' 
             [cdkDropListData]="row" 
-            [cdkDropListConnectedTo]="['row0','row1','row2','row3']" 
             (cdkDropListDropped)="drop($event)" 
             cdkDropListOrientation="horizontal">
         <div  class="slotBox" 
