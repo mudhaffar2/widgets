@@ -3,12 +3,12 @@
   <div class="widget">
     <div class="widget-settings">
       <h4>Settings:</h4>
-      <label>No. of Rows: <input type="text" name="widget_no_of_rows" value="2" onchange="NoRowsSlots(event)"></label>
-      <label>No. of Slots: <input type="text" name="widget_no_of_slots" value="6" onchange="NoRowsSlots(event)"></label>
+      <label>No. of Rows: <input type="text" name="widget_no_of_rows" [value]="widgetSize.rows" (change)="NoRowsSlots($event)"></label>
+      <label>No. of Slots: <input type="text" name="widget_no_of_slots" [value]="widgetSize.slots" (change)="NoRowsSlots($event)"></label>
     </div>
     <div  class="widget-design" cdkDropListGroup>
-      <div  *ngFor='let row of matrix'
-            class="designSlots" 
+      <div  *ngFor='let row of matrix; index as rowIdx'
+            class="designRow" 
             cdkDropList 
             [cdkDropListData]="row" 
             (cdkDropListDropped)="drop($event)" 
@@ -16,8 +16,8 @@
         <div  class="slotBox" 
               cdkDrag 
               [cdkDragData]='col' 
-              *ngFor='let col of row' >
-            <div class="adosr" (click)="adOsrToggle($event)">OSR</div>
+              *ngFor='let col of row; index as colIdx'><p>Slot{{getSlotNumber(rowIdx,colIdx)}}</p>
+            <div class="adosr {{col}}" (click)="adOsrToggle($event,rowIdx,colIdx)">{{col}}</div>
         </div>
       </div>
     </div>

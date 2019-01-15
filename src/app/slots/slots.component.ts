@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
+import { Observable } from 'rxjs';
+import { WidgetSize } from '../models/widget-design.model';
+import { Store, select } from '@ngrx/store';
+import { AppState } from '../app.state';
 
 @Component({
   selector: 'app-slots',
@@ -8,22 +12,26 @@ import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
 })
 export class SlotsComponent implements OnInit {
 
-  constructor() { }
+  constructor(private store: Store<AppState>) { }
 
-  slots = [
-    'Slot1',
-    'Slot2',
-    'Slot3',
-    'Slot4',
-    'Slot5',
-    'Slot6'
-  ];
+  slots: any;
+  
+  widgetSize: Observable<WidgetSize>;
+  matrix: string[][];
+  
+  ngOnInit() {
+    this.store.pipe(select((state: any) => state.widgetSize)).subscribe(widgetSize => this.widgetSize = widgetSize);
+    this.matrix = this.widgetSize.matrix;
+    this.slots = this.flat(this.matrix);
+  }
 
   drop(event: CdkDragDrop<string[]>) {
     moveItemInArray(this.slots, event.previousIndex, event.currentIndex);
   }
 
-  ngOnInit() {
+  flat(arr) {
+    var array = [].concat(...arr);
+    return array;
   }
 
 }
