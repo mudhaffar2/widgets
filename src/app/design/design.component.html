@@ -3,8 +3,24 @@
   <div class="widget">
     <div class="widget-settings">
       <h4>Settings:</h4>
+      <label>Name: <input type="text" name="widget_name" [value]="widgetDesign.name" (change)="NoRowsSlots($event)"></label>
       <label>No. of Rows: <input type="text" name="widget_no_of_rows" [value]="widgetSize.rows" (change)="NoRowsSlots($event)"></label>
       <label>No. of Slots: <input type="text" name="widget_no_of_slots" [value]="widgetSize.slots" (change)="NoRowsSlots($event)"></label>
+      <label>Comment: <input type="text" name="widget_comment" [value]="widgetDesign.comment" (change)="NoRowsSlots($event)"></label>
+      <label>Language: <input type="text" name="widget_language" [value]="widgetDesign.language" (change)="NoRowsSlots($event)"></label>
+      <label>Hard Floor: <input type="text" name="widget_hard_floor" [value]="widgetDesign.hardfloor" (change)="NoRowsSlots($event)"></label>
+      <label>Layout: <input type="text" name="widget_layout" [value]="widgetDesign.layout" (change)="NoRowsSlots($event)"></label>
+      <label>Structure: <input type="text" name="widget_structure" [value]="widgetDesign.structure" (change)="NoRowsSlots($event)"></label>
+      <label>Layout Metadata: <input type="text" name="widget_metalayout" [value]="widgetDesign.metalayout" (change)="NoRowsSlots($event)"></label>
+      <label>Elements Metadata: <input type="text" name="widget_metaelement" [value]="widgetDesign.metaelement" (change)="NoRowsSlots($event)"></label>
+      <label>GetItems Metadata: <input type="text" name="widget_metagetitem" [value]="widgetDesign.metagetitem" (change)="NoRowsSlots($event)"></label>
+      <label>Integration Metadata: <input type="text" name="widget_metaintegration" [value]="widgetDesign.metaintegration" (change)="NoRowsSlots($event)"></label>
+      <label>alias: <input type="text" name="widget_alias" [value]="widgetDesign.alias" (change)="NoRowsSlots($event)"></label>
+      <label>context: <input type="text" name="widget_context" [value]="widgetDesign.context" (change)="NoRowsSlots($event)"></label>
+      <label>priority: <input type="text" name="widget_priority" [value]="widgetDesign.priority" (change)="NoRowsSlots($event)"></label>
+      <label>urlrewrite: <input type="text" name="widget_urlrewrite" [value]="widgetDesign.urlrewrite" (change)="NoRowsSlots($event)"></label>
+      <label>redirectparam: <input type="text" name="widget_redirectparam" [value]="widgetDesign.redirectparam" (change)="NoRowsSlots($event)"></label>
+      <label>Hidden: <input type="checkbox" name="widget_hidden" [value]="widgetDesign.structure" (change)="NoRowsSlots($event)"></label>
     </div>
     <div  class="widget-design" cdkDropListGroup>
       <div  *ngFor='let row of matrix; index as rowIdx'
