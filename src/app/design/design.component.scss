@@ -26,9 +26,33 @@
   border: 1px solid #ddd;
   width: 28%;
   height: 100%;
+  overflow-y: scroll;
 }
 
 .widget-design {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  margin: 0;
+  padding: 0;
+  background-color: #eee;
+  border: 1px solid #ddd;
+  width: 68%;
+  height: 100%;
+}
+
+.widget-design-headline {
+  display: block;
+  position: relative;
+  margin: 0;
+  padding: 10px 2%;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  width: 100%;
+  height: auto;
+}
+
+.widget-design-list {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -37,7 +61,7 @@
   padding: 10px 0;
   background-color: #eee;
   border: 1px solid #ddd;
-  width: 68%;
+  width: 100%;
   height: 100%;
 }
 
@@ -77,8 +101,10 @@
 }
 
 .adosr {
-  display: inline;
-  padding: 2px;
+  display: block;
+  padding: 2px 0;
+  width: 36px;
+  text-align: center;
   font-size: 16px;
   line-height: 1;
   color: #fff;

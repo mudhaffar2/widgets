@@ -22,18 +22,21 @@
       <label>redirectparam: <input type="text" name="widget_redirectparam" [value]="widgetDesign.redirectparam" (change)="NoRowsSlots($event)"></label>
       <label>Hidden: <input type="checkbox" name="widget_hidden" [value]="widgetDesign.structure" (change)="NoRowsSlots($event)"></label>
     </div>
-    <div  class="widget-design" cdkDropListGroup>
-      <div  *ngFor='let row of matrix; index as rowIdx'
-            class="designRow" 
-            cdkDropList 
-            [cdkDropListData]="row" 
-            (cdkDropListDropped)="drop($event)" 
-            cdkDropListOrientation="horizontal">
-        <div  class="slotBox" 
-              cdkDrag 
-              [cdkDragData]='col' 
-              *ngFor='let col of row; index as colIdx'><p>Slot{{getSlotNumber(rowIdx,colIdx)}}</p>
-            <div class="adosr {{col}}" (click)="adOsrToggle($event,rowIdx,colIdx)">{{col}}</div>
+    <div  class="widget-design">
+      <div  class="widget-design-headline">Recommended for you:</div>
+      <div  class="widget-design-list" cdkDropListGroup>
+        <div  *ngFor='let row of matrix; index as rowIdx'
+              class="designRow" 
+              cdkDropList 
+              [cdkDropListData]="row" 
+              (cdkDropListDropped)="drop($event)" 
+              cdkDropListOrientation="horizontal">
+          <div  class="slotBox" 
+                cdkDrag 
+                [cdkDragData]='col' 
+                *ngFor='let col of row; index as colIdx'><p>Slot{{getSlotNumber(rowIdx,colIdx)}}</p>
+              <div class="adosr {{col}}" (click)="adOsrToggle($event,rowIdx,colIdx)">{{col}}</div>
+          </div>
         </div>
       </div>
     </div>
