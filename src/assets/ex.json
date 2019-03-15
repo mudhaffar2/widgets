@@ -160,12 +160,19 @@
       },
       "slots": [
         {
-          "preferences": [{
+          "preferences": [
+            {
               "type": "pet",
               "condition": {
-                "adblocker": "none"
+                "adblocker": "none",
+                "geo_user": "geo",
+                "device_type": "device_type",
+                "os": "operating_system",
+                "browser": "browser",
+                "category": "category"
               },
-              "transparency": 1
+              "transparency": 1,
+              "filter": "filter"
             },
             {
               "type": "default",
@@ -174,17 +181,23 @@
           ]
         },
         {
-          "preferences": [{
-            "type": "pet",
-            "condition": {},
-            "transparency": 1
-          }]
+          "preferences": [
+            {
+              "type": "pet",
+              "condition": {},
+              "transparency": 1,
+              "filter": "filter"
+            }
+          ]
         },
         {
-          "preferences": [{
-            "type": "default",
-            "transparency": 1
-          }]
+          "preferences": [
+            {
+              "type": "default",
+              "transparency": 1,
+              "filter": "filter"
+            }
+          ]
         }
       ]
     },

@@ -2,7 +2,7 @@ import * as widgetDesignTab from '../actions/widget-design-tab.actions';
 import { WidgetSize } from 'src/app/models/widget-design.model';
 
 export const initialState: WidgetSize = {
-    matrix: [['OSR','OSR','OSR'],['OSR','OSR','OSR']],
+    matrix: [['OSR','AD','OSR'],['OSR','AD','OSR']],
     rows: 2,
     slots: 6
 }

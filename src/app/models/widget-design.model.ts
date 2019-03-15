@@ -1,4 +1,4 @@
-import { Headline, Oba, Powered, Advertise } from './all-parts.model';
+import { Headline, Oba, Powered, Advertise } from './widget-design-parts.model';
 
 export interface WidgetSize {
     matrix: string[][];

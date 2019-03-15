@@ -163,7 +163,12 @@ let StoreState = {
           {
             "type": "pet",
             "condition": {
-              "adblocker": "none"
+              "adblocker": "none",
+              "geo_user": "geo",
+              "device_type": "device_type",
+              "os": "operating_system",
+              "browser": "browser",
+              "category": "category"
             },
             "transparency": 1
           },
